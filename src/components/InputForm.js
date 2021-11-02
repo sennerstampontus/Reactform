@@ -3,50 +3,49 @@ import Button from './Button'
 import InputComponents from './InputComponents'
 import Header from './Header'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import FormBg from './FormBg'
 
-const InputForm = () => {
+// const InputForm = ({}) => {
 
 
-    const onClick = (e) => {
-        e.preventDefault()
-        console.log(e)
+    // const onClick = (e) => {
+    //     e.preventDefault()
+    //     console.log(e)
 
         
         
-        let testArray = []
+    //     let testArray = []
 
-        for (let i = 0; i < e.target.length; i++){
-            testArray.push(e.target[i])
-            console.log(e.target[i])
-            if(e.target[i].value === ""){
-                document.getElementById("error").innerText = "Lämna inget fält tomt"
-                // console.log(e.target[i].value)
-            }
+    //     for (let i = 0; i < e.target.length; i++){
+    //         testArray.push(e.target[i])
+    //         console.log(e.target[i])
+    //         if(e.target[i].value === ""){
+    //             document.getElementById("error").innerText = "Lämna inget fält tomt"
+    //             // console.log(e.target[i].value)
+    //         }
 
-            else
-                document.getElementById("error").innerText = ""
-        }
+    //         else
+    //             document.getElementById("error").innerText = ""
+    //     }
             
-    }
+    // }
 
+    function MyControlledInput() {
+        const [value, setValue] = useState("");
+      
+        const onChange = (event) => {
+          setValue(event.target.value);
+        };
 
     return (
-        <div className="flex-j-center vh-100">
-            <div className="box flex-j-center flex-col">
-            <div className="text-align-c"><Link to = "/"><i className="fal fa-chevron-circle-left iconStyle m-tb"></i></Link></div>
-            <Header headerText="Create Customer"/>
-            <form id="form" onSubmit={onClick}  className="buttonStyle p-top-4 text-align-c" noValidate>
-                <InputComponents className="formStyle m-lr" id="firstName" type="text" placeholder="First Name"/>
-                <InputComponents className="formStyle m-lr" id="lastName" type="text" placeholder="Last Name"/>
-                <InputComponents className="styleEmail m-tb" id="email" type="email" placeholder="example@domain.com"/>
-                <Button text="Save Customer"/>
-                <div id="error" className="mt-1"></div>
-            </form>
+        <form className="grid grid-fr4">
+            <div className="grid grid-fr3 col-2"><FormBg />
+            <InputComponents />
             </div>
-        </div>
-
+        </form>
     )}
 
     
 
-export default InputForm
+export default MyControlledInput
