@@ -1,4 +1,4 @@
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 import './App.css';
 import { CreateCustomer } from "./views/CreateCustomer";
 import Home from "./views/Home";
@@ -8,9 +8,11 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Route exact path = "/" component={Home}/>
-        <Route exact path = "/viewcustomer" component={ViewCustomer}/>
-        <Route exact path = "/createcustomer" component={CreateCustomer}/>
+      <Switch>
+        <Route path = "/viewcustomer" exact component={ViewCustomer}/>
+        <Route path = "/createcustomer" exact component={CreateCustomer}/>
+        <Route path= "/" exact component={Home}/>
+        </Switch>
       </BrowserRouter>
     </div>
   );
