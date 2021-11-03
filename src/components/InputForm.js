@@ -7,33 +7,29 @@ import InputComponents from './InputComponents'
 
 const InputForm = () => {
 
+    
+
     const onSubmit = (e) =>{
         e.preventDefault()
         let fieldArray = []
 
         for (let i = 0; i < e.target.length - 1; i++) {
             fieldArray.push(e.target[i])
-            // console.log(e.target[i].type)
 
             const letterRegEx = /[a-ö]{2,}/.exec(`${e.target[i].value}`);
             const emailRegEx = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.exec(`${e.target[i].value}`);
 
-            // if(!e.target[i].classList.contains("is-valid")){
                 if(e.target[i].type === 'text' && !letterRegEx){
 
                 e.target[i].classList.add("is-invalid")
-                // console.log('invalid')
-
             }
 
             else if(e.target[i].type === 'email' && !emailRegEx){
                 e.target[i].classList.add("is-invalid")
-                // console.log('invalid')
             }
 
             else {
                 e.target[i].classList.replace("is-invalid", "is-valid")
-                // console.log('is valid')
             }
         }
 
@@ -68,8 +64,6 @@ const InputForm = () => {
                   element.value=""
                   element.classList.remove("is-valid")
                 //   SubmitError.innerText = ""
-                
-                // let json = JSON.stringify({firstName:e.target[0].value})
               })
             }
             

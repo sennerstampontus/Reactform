@@ -4,6 +4,8 @@ import Button from '../components/Button'
 import CustomerList from '../components/CustomerList'
 
 const ViewCustomer = () => {
+
+    
     return (
         <div className="container mt-5 box">
             <div className="d-flex justify-content-center mb-5 color-white fs-1">Customers</div>
@@ -13,6 +15,7 @@ const ViewCustomer = () => {
             </div>
         </div>
     )
+    
 }
 
 export default ViewCustomer
