@@ -17,12 +17,12 @@ const CustomerList = () => {
     },[])
 
     return (
-        <ul className="list-group">
+        <div className="row row-cols-2">
             {
                 customerItem.map(customerItem =><Customer key={customerItem.id} cardTitle={customerItem.firstName + " " + customerItem.lastName} cardDesc={customerItem.email} />)
             }
             
-        </ul>
+        </div>
     )
 }
 

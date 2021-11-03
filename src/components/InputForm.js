@@ -47,8 +47,22 @@ const InputForm = () => {
           let isInvalid = checkArray.includes(true)
       
           if(!isInvalid){
-              alert('Customer Saved')
+            alert('Customer Saved')
               
+            let json = JSON.stringify({ firstName: `${fieldArray[0].value}`, lastName: `${fieldArray[1].value}`, email: `${fieldArray[2].value}` })
+
+            async function fetchData() {
+                await fetch('https://ecexam-webapi.azurewebsites.net/api/Customers', {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    method: 'post',
+                    body: json
+                })
+            }
+
+            fetchData()
+
 
               fieldArray.forEach((element) =>{
                   element.value=""
