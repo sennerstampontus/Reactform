@@ -6,9 +6,14 @@ const CustomerList = () => {
     const [customerItem, setCustomer] = useState([])
 
     useEffect(()=>{
-        fetch("https://ecexam-webapi.azurewebsites.net/api/Customers")
-        .then(res => res.json())
-        .then(data => setCustomer(data))
+        async function fetchData(){
+            const res = await fetch("https://ecexam-webapi.azurewebsites.net/api/Customers")
+            const data = await res.json()
+
+            setCustomer(data)
+        }
+        
+        fetchData()
     },[])
 
     return (
