@@ -6,7 +6,7 @@ import ViewCustomer from "./views/ViewCustomer";
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <BrowserRouter>
       <Switch>
         <Route path = "/viewcustomer" exact component={ViewCustomer}/>

@@ -1,9 +1,12 @@
 import React from 'react'
 
-const InputComponents = ({className, id, type, placeholder}) => {
+const InputComponents = ({id, inputType, placeholder}) => {
     return (
         <>
-            <div className="pos-absolute">TEST</div>
+            <div className="mb-3 d-f color-white">
+                <label htmlFor="exampleFormControlTextarea1" className="form-label">{placeholder}</label>
+                <input type={inputType} className="form-control" id={id} rows="3" />
+            </div>
         </>
     )
 }
