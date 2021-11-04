@@ -7,8 +7,6 @@ import InputComponents from './InputComponents'
 
 const InputForm = () => {
 
-    
-
     const onSubmit = (e) =>{
         e.preventDefault()
         let fieldArray = []
@@ -36,10 +34,8 @@ const InputForm = () => {
         let checkArray =  fieldArray.map((element)=>{
       
             return (element.classList.contains("is-invalid"))
-      
           })
-        //   console.log(checkArray)
-          // checkArray.includes(false)
+
           let isInvalid = checkArray.includes(true)
       
           if(!isInvalid){
@@ -58,17 +54,13 @@ const InputForm = () => {
             }
 
             fetchData()
-
-
               fieldArray.forEach((element) =>{
                   element.value=""
                   element.classList.remove("is-valid")
                 //   SubmitError.innerText = ""
               })
-            }
-            
+            } 
     }
-
 
     return (
         <form onSubmit={onSubmit} className="grid grid-fr4" noValidate>
