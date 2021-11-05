@@ -16,12 +16,27 @@ html, body{
   max-width: 1200px;
   min-height: 500px;
   overflow: auto;
-  border: 3px solid rgb(57, 98, 126);
+  border: 3px solid #39627e;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 1px 1px 9px 4px #0000005b;
 }
 
+#card:hover{
+  box-shadow: 1px 1px 10px 3px #397196;
+  transform: scale(1.01, 1.01);
+}
+
 .color-white {
   color: white;
+}
+
+.border-bg{
+  border-right: 4px double rgb(29, 160, 212);
+
+}
+
+.awsIcon{
+  font-size: 1.3rem;
+  color: lightsteelblue;
 }

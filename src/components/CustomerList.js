@@ -20,7 +20,8 @@ const CustomerList = () => {
     return (
         <div  className="row row-cols-2 d-flex justify-content-center">
             {
-                customerItem.map(customerItem =><Customer key={customerItem.id} cardTitle={customerItem.firstName + " " + customerItem.lastName} cardDesc={customerItem.email}/>)
+                customerItem.map(customerItem =><Customer key={customerItem.id} cardTitle={`${customerItem.firstName} ${customerItem.lastName}`}
+                cardDesc={`${customerItem.email}`}/>)
             }
             
         </div>
