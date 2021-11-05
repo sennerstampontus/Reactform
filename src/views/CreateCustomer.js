@@ -13,7 +13,6 @@ export const CreateCustomer = () => {
             <HeadTitle TitleText="Create Customer"/>
             <InputForm />  
             <Link to ="/"><Button styleClass="btn btn-primary  mt-4" text="Back"/></Link> 
-            <div className="d-flex justify-content-center text-danger fs-3"></div>
         </div>
     )
 }

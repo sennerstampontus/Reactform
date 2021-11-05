@@ -41,3 +41,7 @@ html, body{
   font-size: 1.3rem;
   color: lightsteelblue;
 }
+
+.text-color-error{
+  color: rgb(153, 15, 15);
+}

@@ -60,6 +60,9 @@ const InputForm = () => {
                 //   SubmitError.innerText = ""
               })
             } 
+
+            else
+                document.getElementById("errorSubmit").innerText = "*Kontrollera fälten"
     }
 
     return (
@@ -68,6 +71,7 @@ const InputForm = () => {
             <InputComponents id="lastName" inputType="text" placeholder="Last Name"/>
             <InputComponents id="email" inputType="email" placeholder="Email"/>
             <Button styleClass="btn btn-primary mt-4" text="Save Customer" />
+            <div id="errorSubmit" className="d-flex justify-content-center text-color-error fs-3"></div>
         </form>
     )
 }

@@ -16,7 +16,6 @@ const ViewCustomer = () => {
             </div>
         </div>
     )
-    
 }
 
 export default ViewCustomer
