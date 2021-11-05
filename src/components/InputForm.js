@@ -15,7 +15,7 @@ const InputForm = () => {
             fieldArray.push(e.target[i])
 
             const letterRegEx = /[a-ö]{2,}/.exec(`${e.target[i].value}`);
-            const emailRegEx = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.exec(`${e.target[i].value}`);
+            const emailRegEx = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i.exec(`${e.target[i].value}`);
 
                 if(e.target[i].type === 'text' && !letterRegEx){
 
@@ -57,6 +57,7 @@ const InputForm = () => {
               fieldArray.forEach((element) =>{
                   element.value=""
                   element.classList.remove("is-valid")
+                  document.getElementById("errorSubmit").innerText = ""
                 //   SubmitError.innerText = ""
               })
             } 
