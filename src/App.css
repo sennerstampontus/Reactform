@@ -9,10 +9,11 @@
 
 html, body{
   font-size: 16px;
-  background-color: rgb(32, 70, 105);
+  background-color: rgb(49, 82, 114);
 }
 
 .box{
+  background: linear-gradient(to top, #445d72, #345672 100%, #4c6981 0%);;
   max-width: 1200px;
   min-height: 500px;
   overflow: auto;
